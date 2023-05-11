@@ -1,16 +1,21 @@
 # push_one_signal
 
-A new Flutter project.
+Recebendo mensagens via Push, OneSignal
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+# Configurar na main
 
-A few resources to get you started if this is your first Flutter project:
+void main() {<br>
+  WidgetsFlutterBinding.ensureInitialized();<br>
+  OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);<br>
+  OneSignal.shared.setAppId("sua chave do oneSignal");<br>
+  OneSignal.shared.promptUserForPushNotificationPermission().then((accept){<br>
+    print("Accept permission: $accept");<br>
+    });<br>
+  runApp(const MyApp());<br>
+}
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Short Video
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://github.com/brunoh-android/pushOneSignal/assets/67665152/dd1de1f3-b56b-49b0-809b-66b351348b46
+
